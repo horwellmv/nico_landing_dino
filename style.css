@@ -1,0 +1,24 @@
+/* reset defaults that browsers apply to elements */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+.dark .glass {
+    background: rgba(4, 8, 14, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* additional utility classes not provided by Tailwind CDN */
+.slow-bounce {
+    animation-duration: 3s;
+}
+

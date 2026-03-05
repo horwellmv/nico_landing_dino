@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Nicolás Murillo - Candidato</title>
+    <!-- load configuration first so the CDN script can pick it up -->
+    <script src="./tailwind.config.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+    <!-- custom stylesheet with glassmorphism helpers and any additional rules -->
+    <link rel="stylesheet" href="./style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Playfair+Display:ital,wght@1,600&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet">
+
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased transition-colors duration-300">
+    
+    <!-- ========== NAVBAR ========== -->
+    <nav class="fixed w-full z-50 glass shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <span class="text-3xl font-black text-secondary dark:text-white">#3</span>
+                    <span class="font-bold text-xl hidden sm:block">Nicolás Murillo</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a class="hover:text-primary px-3 py-2 rounded-md text-sm font-semibold transition-colors"
+                            href="#inicio">Inicio</a>
+                        <a class="hover:text-primary px-3 py-2 rounded-md text-sm font-semibold transition-colors"
+                            href="#propuestas" >Propuestas</a>
+                        <a class="hover:text-primary px-3 py-2 rounded-md text-sm font-semibold transition-colors"
+                            href="#galeria" >Galería</a>
+                        <a class="bg-primary text-secondary px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-transform"
+                            href="#juego" >Jugar</a>
+                        <!-- Botón cambiar tema -->
+                        <button id="themeToggleBtn" class="p-2 rounded-full hover:bg-white/20 transition-colors" title="Cambiar tema">
+                            <span class="material-symbols-outlined text-xl">light_mode</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Botón tema (mobile) -->
+                <button id="themeToggleBtnMobile" class="md:hidden p-2 rounded-full hover:bg-white/20 transition-colors" title="Cambiar tema">
+                    <span class="material-symbols-outlined text-xl">light_mode</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- FIN NAVBAR -->
+    
+    <!-- ========== SECCIÓN HERO ========== -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden" id="inicio">
+        <!-- Efectos de fondo -->
+        <div class="absolute inset-0 bg-secondary dark:bg-slate-900 -z-20"></div>
+        <div
+            class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?q=80&amp;w=2029&amp;auto=format&amp;fit=crop')] bg-cover bg-center opacity-20 dark:opacity-10 mix-blend-overlay -z-10">
+        </div>
+        <div class="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-primary/20 blur-[120px] -z-10">
+        </div>
+        <div class="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-500/20 blur-[100px] -z-10"></div>
+        
+        <!-- Contenido principal -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Grid: Imagen + Texto -->
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Sección Imagen -->
+                <div class="relative mx-auto w-full max-w-md lg:max-w-none order-2 lg:order-1">
+                    <div
+                        class="relative rounded-3xl overflow-hidden glass aspect-[4/5] border-4 border-primary/50 shadow-2xl shadow-primary/20">
+                        <img alt="Nicolás Murillo Serrano" class="w-full h-full object-cover object-top"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTc8xzqjhUIH9vyU8dzVnfDL1S_lyd9tDDQ6uKNKKawQICHtJvD75_8nvPlEm0u5jKMen23j_nDzbwHHa54j4Ywyx786JIDKLM08stDvyA741Th2f0pi_QIxxPg4h4MjV_yLUd6annZkW9HYHWhok0z2I05ORbGcZKJaqsSJYT6XfEKjpHkaLsX4zac67u9BVzZcjDN7lBoHG7Viq_TM-fGrRqCP4jrVpOk3cvlCTzfu93iankN7RuuQ4Gpt3GMqujKBB8NRxDhF4"
+                        >
+                        <div
+                            class="absolute bottom-6 left-6 right-6 bg-gradient-to-r from-secondary/90 to-blue-900/90 backdrop-blur-sm rounded-2xl p-4 border border-white/20 flex items-center justify-between">
+                            <div>
+                                <p class="text-white text-xs font-bold uppercase tracking-wider">Institución
+                                    Educativa</p>
+                                <p class="text-primary font-bold text-sm">José Eustasio Rivera</p>
+                                <p class="text-white/80 text-xs">Cubarral – Meta</p>
+                            </div>
+                            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center p-1">
+                                <img alt="Logo Colegio" class="w-full h-full object-contain rounded-full"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA560so1UsEhNzDx2eDQB5NEVsMWky29kskc-cPsRf1wSOexN5dwVZOoW6FdDJtYk55dJAUSxybyHR8blNz2BddX40wbtmxXNPsXHtSGy9F_ExVQJUEo1mPCj1lxMkqXVHyWT70C8z8zvoAtp00HKH2xFql79mjN0Vu_cjK-URXsmPS3sBwlmU2D8N-BfSNNLBeKmgbX1Fh28nvjR-SomjFVeiD1ZAWNLCvV9rDpkO3nRT56Gc94pARodzHmfc2szuFSX4o-3TKL9M"
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-10 -right-10 lg:-right-20 w-32 h-32 lg:w-48 lg:h-48 bg-gradient-to-br from-primary to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 border-4 border-white animate-bounce slow-bounce">
+                        <span class="text-6xl lg:text-8xl font-black text-secondary">#3</span>
+                    </div>
+                </div>
+                <!-- Sección Texto/CTA -->
+                <div class="text-center lg:text-left text-white order-1 lg:order-2">
+                    <!-- Badge Candidato -->
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 text-primary font-semibold tracking-wide text-sm uppercase"
+                    >
+                        <span class="material-symbols-outlined text-xl">how_to_vote</span>
+                        Candidato a Contralor 2026
+                    </div>
+                    <!-- Título Principal -->
+                    <h1 class="text-5xl lg:text-7xl font-black mb-4 leading-tight">
+                        <span class="block text-primary drop-shadow-lg">NICOLÁS</span>
+                        <span class="block">MURILLO</span>
+                        <span class="block text-3xl lg:text-5xl mt-2 font-bold opacity-90">SERRANO</span>
+                    </h1>
+
+                    <!-- Tagline -->
+                    <div class="my-8 font-accent italic text-3xl lg:text-4xl text-primary drop-shadow-md">
+                        Transparencia
+                    </div>
+                    <p class="text-xl lg:text-2xl font-semibold bg-white/10 inline-block px-6 py-3 rounded-xl backdrop-blur-md border border-white/20 uppercase tracking-wider"
+                    >
+                        Que construye confianza
+                    </p>
+                    <!-- Botones CTA -->
+                    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a class="bg-primary text-secondary hover:bg-yellow-400 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg shadow-primary/30 flex items-center justify-center gap-2"
+                            href="#propuestas">
+                            Mis Propuestas
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <div class="flex items-center justify-center gap-4 px-8 py-4 rounded-full glass border border-white/30 text-white font-bold text-lg"
+                        >
+                            Número
+                            <span
+                                class="bg-primary text-secondary w-10 h-10 rounded-full flex items-center justify-center text-2xl font-black"
+                            >3</span>
+                            en el tarjetón
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIN SECCIÓN HERO -->
+    
+    <!-- ========== SECCIÓN MI PERFIL ========== -->
+    <section class="py-20 bg-surface-light dark:bg-surface-dark relative" id="perfil">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-secondary dark:text-white mb-4 inline-block relative">
+                    Mi Perfil
+                    <div class="absolute -bottom-2 left-0 w-full h-1.5 bg-primary rounded-full"></div>
+                </h2>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="glass dark:bg-slate-800/50 rounded-3xl p-8 md:p-12 shadow-xl border-t-4 border-t-primary">
+                    <p class="text-xl md:text-2xl text-text-light dark:text-text-dark font-medium leading-relaxed mb-8"
+                    >
+                        Hola, soy <span class="text-secondary dark:text-primary font-bold">Nicolás Murillo
+                            Serrano</span>, estudiante comprometido con la <strong
+                            class="text-secondary dark:text-white">honestidad, la responsabilidad y el respeto</strong>.
+                    </p>
+                    <ul class="space-y-6">
+                        <li class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-primary text-3xl shrink-0"
+                            >check_circle</span>
+                            <p class="text-lg">Soy <strong>organizado</strong>, justo y con liderazgo.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-primary text-3xl shrink-0"
+                            >check_circle</span>
+                            <p class="text-lg">Creo en la <strong>transparencia</strong> como base para
+                                fortalecer nuestra institución.</p>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-primary text-3xl shrink-0"
+                            >check_circle</span>
+                            <p class="text-lg">Me comprometo a <strong>velar por el buen uso de los
+                                    recursos</strong> y a escuchar a mis compañeros.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIN SECCIÓN MI PERFIL -->
+    
+    <!-- ========== SECCIÓN MIS PROPUESTAS ========== -->
+    <section class="py-20 bg-background-light dark:bg-background-dark" id="propuestas">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-secondary dark:text-white mb-4 inline-block relative">
+                    Mis Propuestas
+                    <div class="absolute -bottom-2 left-0 w-full h-1.5 bg-primary rounded-full"></div>
+                </h2>
+                <p class="mt-4 text-xl text-gray-600 dark:text-gray-400">Acciones reales para nuestro colegio
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Propuesta 1: Transparencia -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-gray-800 flex flex-col gap-6 group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-secondary/10 dark:bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
+                        <span
+                            class="material-symbols-outlined text-secondary dark:text-primary text-3xl group-hover:text-secondary"
+                        >search</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-secondary dark:text-white mb-3">Transparencia Total
+                        </h3>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> Informes claros y públicos sobre
+                                el uso de recursos.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> Rendiciones de cuentas
+                                periódicas.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Propuesta 2: Participación -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-gray-800 flex gap-6 group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-secondary/10 dark:bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
+                        <span
+                            class="material-symbols-outlined text-secondary dark:text-primary text-3xl group-hover:text-secondary"
+                        >campaign</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-secondary dark:text-white mb-3">Participación
+                            Estudiantil</h3>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> Espacios para escuchar tus
+                                inquietudes.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> Buzón físico y digital de
+                                sugerencias.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Propuesta 3: Seguimiento -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-gray-800 flex gap-6 group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-secondary/10 dark:bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
+                        <span
+                            class="material-symbols-outlined text-secondary dark:text-primary text-3xl group-hover:text-secondary"
+                        >fact_check</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-secondary dark:text-white mb-3">Seguimiento
+                            Responsable</h3>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> Supervisión de proyectos
+                                escolares.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> Acompañamiento a iniciativas
+                                estudiantiles.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Propuesta 4: Trabajo en Equipo -->
+                <div
+                    class="bg-surface-light dark:bg-surface-dark rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 dark:border-gray-800 flex gap-6 group">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-secondary/10 dark:bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors">
+                        <span
+                            class="material-symbols-outlined text-secondary dark:text-primary text-3xl group-hover:text-secondary"
+                        >handshake</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-secondary dark:text-white mb-3">Trabajo en Equipo
+                        </h3>
+                        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> Apoyo al gobierno escolar.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <div class="w-1.5 h-1.5 rounded-full bg-primary"></div> Promoción del respeto y la
+                                convivencia.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Principal -->
+            <div class="mt-16 text-center">
+                <div
+                    class="inline-block bg-gradient-to-r from-secondary to-blue-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+                    <div
+                        class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+                    </div>
+                    <div class="relative z-10 flex flex-col md:flex-row items-center gap-6">
+                        <div
+                            class="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center rotate-12 shadow-lg">
+                            <span class="material-symbols-outlined text-secondary text-5xl">how_to_vote</span>
+                        </div>
+                        <div class="text-left">
+                            <h4 class="text-3xl font-black text-white mb-1">Marca el <span class="text-primary"
+                                >#3 en el tarjeton</span></h4>
+                            <p class="text-white/80 font-accent italic text-xl">Porque la transparencia no se
+                                promete...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIN SECCIÓN MIS PROPUESTAS -->
+    
+    <!-- ========== SECCIÓN GALERÍA ========== -->
+    <section class="py-24 bg-background-light dark:bg-background-dark relative" id="galeria">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-secondary dark:text-white mb-4 inline-block relative">
+                    Galería
+                    <div class="absolute -bottom-2 left-0 w-full h-1.5 bg-primary rounded-full"></div>
+                </h2>
+                <p class="mt-4 text-xl text-gray-600 dark:text-gray-400">Momentos de campaña</p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Foto 1 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl aspect-square shadow-lg hover:shadow-2xl transition-shadow">
+                    <img alt="Momento de campaña 1"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        src="./Assets/fotos/foto-1.jpg">
+                    <div
+                        class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                        <span
+                            class="text-white font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity">#3
+                            Nico</span>
+                    </div>
+                </div>
+                
+                <!-- Foto 2 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl aspect-square shadow-lg hover:shadow-2xl transition-shadow">
+                    <img alt="Momento de campaña 2"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        src="./Assets/fotos/foto-2.jpg">
+                    <div
+                        class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                        <span
+                            class="text-white font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity">Con
+                            estudiantes</span>
+                    </div>
+                </div>
+                
+                <!-- Foto 3 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl aspect-square shadow-lg hover:shadow-2xl transition-shadow">
+                    <img alt="Momento de campaña 3"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        src="./Assets/fotos/foto-3.jpg">
+                    <div
+                        class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                        <span
+                            class="text-white font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity">Transparencia</span>
+                    </div>
+                </div>
+                
+                <!-- Foto 4 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl aspect-square shadow-lg hover:shadow-2xl transition-shadow">
+                    <img alt="Momento de campaña 4"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        src="./Assets/fotos/foto-4.jpg">
+                    <div
+                        class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                        <span
+                            class="text-white font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity">Compromiso</span>
+                    </div>
+                </div>
+                
+                <!-- Foto 5 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl aspect-square shadow-lg hover:shadow-2xl transition-shadow">
+                    <img alt="Momento de campaña 5"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        src="./Assets/fotos/foto-5.jpg">
+                    <div
+                        class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                        <span
+                            class="text-white font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity">Liderazgo</span>
+                    </div>
+                </div>
+                
+                <!-- Foto 6 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl aspect-square shadow-lg hover:shadow-2xl transition-shadow">
+                    <img alt="Momento de campaña 6"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        src="./Assets/fotos/foto-6.jpg">
+                    <div
+                        class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                        <span
+                            class="text-white font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity">Juntos
+                            #3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIN SECCIÓN GALERÍA -->
+    
+    <!-- ========== SECCIÓN JUEGO ========== -->
+    <section
+        class="py-24 bg-surface-light dark:bg-surface-dark relative overflow-hidden border-y border-gray-200 dark:border-gray-800"
+        id="juego">
+        <div class="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
+            <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern height="40" id="grid" patternUnits="userSpaceOnUse" width="40">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1"></path>
+                    </pattern>
+                </defs>
+                <rect fill="url(#grid)" height="100%" width="100%"></rect>
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Grid: Juego (2 cols) + Leaderboard (1 col) -->
+            <div class="grid lg:grid-cols-3 gap-12 items-start">
+                <!-- Contenedor Principal del Juego -->
+                <div class="lg:col-span-2">
+                    <div class="text-center lg:text-left mb-8">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-sm font-bold mb-4"
+                        >
+                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                            Juego de Campaña
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-black text-secondary dark:text-white mb-4">
+                            Super Nico&nbsp;<span class="text-primary">#3</span>
+                        </h2>
+                        <p class="text-lg text-gray-700 dark:text-gray-400">¡Ayuda a Nico a recolectar votos y
+                            esquivar obstáculos! Atrapa el #3 y evita los otros numeros para sumar puntos.</p>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-900 rounded-3xl p-4 shadow-2xl border-4 border-gray-200 dark:border-gray-700">
+                        <div id="gameContainer" class="w-full relative hidden">
+                            <canvas id="gameCanvas"
+                                class="w-full h-auto bg-cyan-100 dark:bg-slate-700 rounded-2xl border-2 border-gray-300 dark:border-gray-600"
+                                width="800" height="400"></canvas>
+                            <div id="gameUI"
+                                class="mt-4 flex justify-between items-center bg-gray-50 dark:bg-slate-800 p-4 rounded-xl">
+                                <div class="text-sm font-bold">
+                                    <span class="text-gray-700 dark:text-gray-300">Vidas: </span>
+                                    <span id="livesDisplay" class="text-red-600 dark:text-red-400">❤️❤️❤️</span>
+                                </div>
+                                <div class="text-sm font-bold">
+                                    <span class="text-gray-700 dark:text-gray-300">Puntaje: </span>
+                                    <span id="scoreDisplay" class="text-primary">0</span>
+                                </div>
+                                <div class="text-sm font-bold">
+                                    <span class="text-gray-700 dark:text-gray-300">Tiempo: </span>
+                                    <span id="timeDisplay" class="text-secondary dark:text-white">0s</span>
+                                </div>
+                            </div>
+                            <div id="touchControlsArea" class="mt-4 flex gap-2 justify-center md:hidden">
+                                <button id="jumpBtn"
+                                    class="flex-1 bg-primary text-secondary py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors shadow-lg flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-2xl">arrow_upward</span>
+                                    SALTAR
+                                </button>
+                                <button id="quitGameBtn"
+                                    class="flex-1 bg-red-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-red-700 transition-colors shadow-lg flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined text-2xl">close</span>
+                                    ABANDONAR
+                                </button>
+                            </div>
+                        </div>
+                        <div id="gameStartPrompt"
+                            class="w-full aspect-video bg-gray-100 dark:bg-slate-800 rounded-2xl border-2 border-dashed border-gray-300 dark:border-gray-600 relative overflow-hidden flex items-center justify-center flex-col gap-6">
+                            <div class="absolute bottom-10 left-0 w-full h-1 bg-gray-400 dark:bg-gray-600"></div>
+                            <div class="absolute bottom-11 left-20">
+                                <span
+                                    class="material-symbols-outlined text-6xl text-gray-800 dark:text-gray-200">cruelty_free</span>
+                            </div>
+                            <div class="absolute bottom-11 right-32">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-green-600 dark:text-green-500">park</span>
+                            </div>
+                            <div class="absolute top-10 right-20 animate-bounce">
+                                <div
+                                    class="bg-primary w-10 h-10 rounded-full flex items-center justify-center shadow-lg font-black text-secondary">
+                                    #3</div>
+                            </div>
+                            <div
+                                class="relative z-10 flex flex-col items-center p-8 bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-2xl shadow-xl">
+                                <span class="material-symbols-outlined text-5xl text-primary mb-4">sports_esports</span>
+                                <h3 class="text-2xl font-bold mb-6 text-center">¿Listo para jugar?</h3>
+                                <button id="startGameBtn"
+                                    class="bg-secondary text-white hover:bg-blue-800 px-8 py-3 rounded-full font-bold text-lg transition-transform hover:scale-105 shadow-lg flex items-center gap-2">
+                                    <span class="material-symbols-outlined">play_arrow</span>
+                                    Iniciar Juego
+                                </button>
+                                <p class="mt-4 text-sm text-gray-500">toca la pantalla para saltar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Leaderboard/Top Votantes -->
+                <div class="lg:col-span-1">
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-xl border border-gray-100 dark:border-gray-700 h-full">
+                        <div
+                            class="flex items-center justify-between mb-6 pb-4 border-b border-gray-200 dark:border-gray-700">
+                            <h3 class="text-2xl font-bold flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">emoji_events</span>
+                                Top Votantes
+                            </h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div
+                                class="flex items-center p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl border border-yellow-200 dark:border-yellow-700/50">
+                                <div class="w-8 h-8 flex items-center justify-center font-black text-yellow-600 dark:text-yellow-500"
+                                >1</div>
+                                <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden mx-3">
+                                    <img alt="Avatar" class="w-full h-full object-cover"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnsBffLbASKj2UhPGxi0MegYCwk29XT1-K_TaiCNNaMn_zbrlUb2Hywkvsh_XRMro-y3VZxkXTjKgl-X8HDYxS4uNei0oqfZiP3VCl7DLX4FHLtCMR6SeuPqPBtOXtEWgQtTm7hR8TyNIv-2KkaLh67biQskndVelaYTXPIts6J9hIxdW_mOKY1WFLIo_icN6Efwlf5ltZqAP03jvA_HQ-zu4PSv1y5vIj903JwLms2VrF_fHjaxeBhJp8FCTLq4T303rrWQsRxBQ"
+                                    >
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-sm">María S.</div>
+                                    <div class="text-xs text-gray-500">Salon 6-a</div>
+                                </div>
+                                <div class="font-black text-secondary dark:text-white">2,450</div>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 dark:bg-slate-700/50 rounded-xl">
+                                <div class="w-8 h-8 flex items-center justify-center font-bold text-gray-500 dark:text-gray-400"
+                                >2</div>
+                                <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden mx-3">
+                                    <img alt="Avatar" class="w-full h-full object-cover"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTUqzdNHiJlcQV57nKbJaCz2vYdpjBlxvwWdjCMMZtzNuxCWTH76G-FgoJAZSl_y78OGESEH9kO9x26g1TEQK6c_miy3VHPN1GrtTad04O08ubKcNFp3q6OlFZG-5AD4JMb7vJ8gcRLcaCT5DQ3No5bDLwEvCHcWHEiH0zVsINdyHljkaQLtvSr3mbTWbqq5uSpSxYt_Pvq63u3eBR7Mp_16iXzRn2sCnRIfwuk_jnLD5Ppz5q1iqeAT0w3ekYLGoTu6efJhYBvvI"
+                                    >
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-sm">Juan P.</div>
+                                    <div class="text-xs text-gray-500">Salon 7-b</div>
+                                </div>
+                                <div class="font-bold text-gray-700 dark:text-gray-300">1,890</div>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 dark:bg-slate-700/50 rounded-xl">
+                                <div class="w-8 h-8 flex items-center justify-center font-bold text-orange-600 dark:text-orange-400"
+                                >3</div>
+                                <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden mx-3">
+                                    <img alt="Avatar" class="w-full h-full object-cover"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjg3hZmVx9tBVRVJO2_AhNDC5S_zPtZaE6JAupeSKV-14EElJ3Ta5gqXeejZJGNYFXwYyiepxA8yjiH6iBSEqu5-_0qXaLRyn39SPHPuGD73OVBqn3edQrsAXeVEc9jlMyKLZLQFEVelcD-902vR8KaJ42e4afOLEAtYKmX8WYEpuZ-lOTeNdYsGrbn6kjnCIqKZnT58aGkELedi7PbFuUDnxQWkuRgYBK37G5S6jNQa3ZuTYEC87KkD5DO9-JsKsQ_pLK1rXdDZo"
+                                    >
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-sm">Ana R.</div>
+                                    <div class="text-xs text-gray-500">Salon 8-a</div>
+                                </div>
+                                <div class="font-bold text-gray-700 dark:text-gray-300">1,650</div>
+                            </div>
+                            <div class="flex items-center p-3 bg-gray-50 dark:bg-slate-700/50 rounded-xl">
+                                <div class="w-8 h-8 flex items-center justify-center font-bold text-gray-500 dark:text-gray-400"
+                                >4</div>
+                                <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden mx-3">
+                                    <img alt="Avatar" class="w-full h-full object-cover"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuACbVd0i3VbzjLDd8TiepZoYa4yNSd9YiWsMUwLwa6b_vJVauS1IzsuSYpDiotRG_MHsLzoviCtt3Q3iVCKiBLnpwGjoGdNe3W5Lhc3IXtUVqMXCZeQlKOpfRWdnpYk1tby8s7wdX847fASRsoW1BuOZ4AtwK6PDnbGP_y8wk-8FYoesG9r07cRWabi8yLQPawdblHilwMUIbeh0hG2USpBR0req72zYrfBULMkbRN7Y5hVYoc-0U9CtqqdgkhjQxxlQpJ02MU8pAU"
+                                    >
+                                </div>
+                                <div class="flex-1">
+                                    <div class="font-bold text-sm">Carlos M.</div>
+                                    <div class="text-xs text-gray-500">Salon 8-a</div>
+                                </div>
+                                <div class="font-bold text-gray-700 dark:text-gray-300">1,420</div>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full mt-6 py-3 border-2 border-primary text-secondary dark:text-white font-bold rounded-xl hover:bg-primary hover:text-secondary transition-colors"
+                        >
+                            Ver Ranking Completo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FIN SECCIÓN JUEGO -->
+    
+    <!-- ========== MODAL GAME OVER ========== -->
+    <div id="gameOverModal"
+        class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl max-w-md w-full shadow-2xl border-4 border-primary relative">
+            <button id="closeModalBtn"
+                class="absolute top-4 right-4 bg-red-600 hover:bg-red-700 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg transition-colors shadow-lg">
+                ✕
+            </button>
+            <div class="bg-gradient-to-r from-secondary to-blue-800 p-6 text-white rounded-t-2xl">
+                <h2 class="text-3xl font-black mb-2">¡Juego Terminado!</h2>
+                <p class="text-sm opacity-90">Verifica si entraste al Top 10</p>
+            </div>
+            <div class="p-8">
+                <div class="mb-6 space-y-4 bg-gray-50 dark:bg-slate-700 p-4 rounded-xl">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-gray-700 dark:text-gray-300">Puntaje Final:</span>
+                        <span class="text-2xl font-black text-primary" id="finalScore">0</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-gray-700 dark:text-gray-300">Tiempo Jugado:</span>
+                        <span class="font-bold text-secondary dark:text-white" id="finalTime">0s</span>
+                    </div>
+                    <div class="flex justify-between items-center" id="rankingInfo" class="hidden">
+                        <span class="font-bold text-gray-700 dark:text-gray-300">Posición:</span>
+                        <span class="font-bold text-primary" id="finalRank">-</span>
+                    </div>
+                </div>
+                <div id="topScoreForm" class="space-y-4 mb-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Tu Nombre</label>
+                        <input id="playerName" type="text"
+                            class="w-full px-4 py-2 border-2 border-gray-300 dark:border-gray-600 rounded-lg dark:bg-slate-700 dark:text-white focus:border-primary outline-none"
+                            placeholder="Ingresa tu nombre">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Tu
+                            Aula/Curso</label>
+                        <input id="playerClass" type="text"
+                            class="w-full px-4 py-2 border-2 border-gray-300 dark:border-gray-600 rounded-lg dark:bg-slate-700 dark:text-white focus:border-primary outline-none"
+                            placeholder="Ej: 6-a">
+                    </div>
+                </div>
+                <div id="notTopScoreMessage"
+                    class="hidden mb-6 p-4 bg-yellow-50 dark:bg-yellow-900/30 border-l-4 border-yellow-500 rounded">
+                    <p class="text-sm font-bold text-yellow-800 dark:text-yellow-200">No entraste al Top 10, ¡pero
+                        puedes intentarlo de nuevo!</p>
+                </div>
+                <div class="flex gap-3">
+                    <button id="saveScoreBtn"
+                        class="flex-1 bg-primary text-secondary hover:bg-yellow-400 py-2 rounded-lg font-bold transition-colors hidden">
+                        Guardar Puntuación
+                    </button>
+                    <button id="playAgainBtn"
+                        class="flex-1 bg-secondary text-white hover:bg-blue-900 py-2 rounded-lg font-bold transition-colors">
+                        Jugar Nuevamente
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FIN MODAL GAME OVER -->
+    
+    <!-- ========== FOOTER ========== -->
+    <footer class="bg-secondary text-white py-12 border-t-8 border-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center gap-3 justify-center md:justify-start mb-2">
+                        <span class="text-4xl font-black text-primary">#3</span>
+                        <span class="font-bold text-2xl">Nicolás Murillo</span>
+                    </div>
+                    <p class="text-gray-300">Transparencia que construye confianza.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <p class="font-bold mb-2">Candidato a Contralor 2026</p>
+                    <p class="text-sm text-gray-400">Institución Educativa José Eustasio Rivera</p>
+                    <p class="text-sm text-gray-400">Cubarral – Meta</p>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-white/20 text-center text-sm text-gray-400">
+                © 2024 Campaña Nicolás Murillo #3. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+    <!-- FIN FOOTER -->
+
+</body>
+
+<!-- Script del Juego -->
+<script>
+    // Tema Claro/Oscuro Toggle
+    const html = document.documentElement;
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeToggleBtnMobile = document.getElementById('themeToggleBtnMobile');
+    
+    // Detectar preferencia guardada o usar la preferencia del sistema
+    const isDarkMode = localStorage.getItem('theme') === 'dark' || 
+                       (localStorage.getItem('theme') === null && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    
+    if (isDarkMode) {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        updateThemeIcon('dark');
+    } else {
+        html.classList.add('light');
+        html.classList.remove('dark');
+        updateThemeIcon('light');
+    }
+    
+    function updateThemeIcon(theme) {
+        const icon = theme === 'dark' ? 'dark_mode' : 'light_mode';
+        if (themeToggleBtn) themeToggleBtn.querySelector('span').textContent = icon;
+        if (themeToggleBtnMobile) themeToggleBtnMobile.querySelector('span').textContent = icon;
+    }
+    
+    function toggleTheme() {
+        const isDark = html.classList.contains('dark');
+        if (isDark) {
+            html.classList.remove('dark');
+            html.classList.add('light');
+            localStorage.setItem('theme', 'light');
+            updateThemeIcon('light');
+        } else {
+            html.classList.remove('light');
+            html.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            updateThemeIcon('dark');
+        }
+    }
+    
+    if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
+    if (themeToggleBtnMobile) themeToggleBtnMobile.addEventListener('click', toggleTheme);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script> <script src="game.js"></script>
+<script src="./game.js" defer></script>
+
+</html>

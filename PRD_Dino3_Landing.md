@@ -40,3 +40,36 @@
 ## 6. Configuración de Deployment (Hostinger)
 - Configurar el Webhook de GitHub en el hPanel de Hostinger.
 - Apuntar el dominio a la subcarpeta del repositorio.
+
+## 7. Assets y Referencias Actuales
+- **Base Code:** Ver `index.html` para la estructura DOM inicial.
+- **Visual Source:** Ver `design_reference.png` para estilos, espaciados y paleta de colores.
+- **Instrucción de Estilo:** El desarrollo debe ser Pixel Perfect respecto a la imagen, usando Tailwind CSS de forma declarativa.
+
+## 8. Assets & Sprite Mapping (Single Sheet Approach)
+Se utilizará un único archivo `spritesheet.png`. La función `ctx.drawImage()` de Canvas API gestionará el recorte dinámico.
+
+### A. Nicolas Pixel (Avatar)
+- **Running Animation:** - Cantidad de Frames: 8 frames.
+  - Frame Size: Sugerido 64x64 px por frame.
+  - Timing: 100ms por frame (Total ciclo: 800ms).
+- **Jumping Pose:** 1 frame estático.
+- **Game Over Pose:** 1 frame con efecto "dazed".
+
+### B. Obstacles (Numeros 1, 2)
+- **Tipo:** Static Sprites.
+- **Hitbox:** Caja de colisión reducida (Padding del 10%) para evitar frustración en el jugador (Fair Play).
+
+### C. Power-Up (Número 3)
+- **Efecto:** +50 pts y Aura de brillo.
+- **Visual:** Sprite con destellos dorados.
+
+## 9. Lógica de Animación y Tiempos
+Para un movimiento fluido en una pantalla de 60Hz:
+- **Game Loop:** `requestAnimationFrame` para asegurar FPS constantes.
+- **Frame Rate de Animación:** Independiente del Game Loop. El cambio de frame del avatar debe ocurrir cada 6-8 ciclos del loop principal para que no parezca que corre "demasiado rápido".
+- **Velocity:** Incremento de `0.2px/frame` cada 300 puntos logrados.
+
+## 10. Referencias de Diseño del juego
+- **Sprites:** `spritesheet.webp`.
+- **Estilo:** Pixel Art Moderno / Vibrante.
