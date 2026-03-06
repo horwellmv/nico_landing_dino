@@ -1,3 +1,4 @@
+
 // ============================================================================
 // SUPER NICO #3 - Game Loop
 // Game Dino modificado para campaña política estudiantil
@@ -84,7 +85,7 @@ let particles = [];
 
 // Spritesheet (se cargará si existe)
 let spritesheet = null;
-const spritesheetPath = './assets/sprite_sheet.png';
+const spritesheetPath = './assets/sprite-sheet.webp';
 
 // Animation state
 let playerFrame = 0;

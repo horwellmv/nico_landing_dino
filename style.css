@@ -1,24 +1,58 @@
-/* reset defaults that browsers apply to elements */
+/* CSS Custom Properties - Paleta de Colores Personalizada */
+:root {
+    --color-primary: #FFD700;
+    --color-secondary: #0033A0;
+    --color-bg-light: #F0F4FF;
+    --color-bg-dark: #0F172A;
+    --color-surface-light: #FFFFFF;
+    --color-surface-dark: #1E293B;
+    --color-text-light: #0F172A;
+    --color-text-dark: #F1F5F9;
+    --color-text-muted: #475569;
+}
 
+/* Colores de Fondo */
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-background-light { background-color: var(--color-bg-light); }
+.bg-background-dark { background-color: var(--color-bg-dark); }
+.bg-surface-light { background-color: var(--color-surface-light); }
+.bg-surface-dark { background-color: var(--color-surface-dark); }
+
+/* Colores de Texto */
+.text-primary { color: var(--color-primary); }
+.text-secondary { color: var(--color-secondary); }
+.text-light { color: var(--color-text-light); }
+.text-dark { color: var(--color-text-dark); }
+.text-muted { color: var(--color-text-muted); }
+
+/* Dark Mode - Sobrescribir colores */
+.dark .bg-background-light { background-color: var(--color-bg-dark); }
+.dark .bg-background-dark { background-color: var(--color-bg-dark); }
+.dark .text-light { color: var(--color-text-dark); }
+.dark .text-dark { color: var(--color-text-dark); }
+
+/* Reset defaults que aplican los navegadores */
 body {
     margin: 0;
     padding: 0;
 }
 
+/* Glassmorphism effect */
 .glass {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgb(212, 229, 255);
+    backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-.dark .glass {
-    background: rgba(4, 8, 14, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.455);
 }
 
-/* additional utility classes not provided by Tailwind CDN */
+.dark .glass {
+    background: rgba(24, 36, 55, 0.967);
+    border: 1px solid rgba(44, 44, 44, 0.546);
+}
+
+/* Custom animations */
 .slow-bounce {
-    animation-duration: 3s;
+    animation-duration: 1s;
 }
 
