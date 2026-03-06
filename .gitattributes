@@ -1,0 +1,5 @@
+# Forzar que los archivos de texto siempre se normalicen a LF en el repo
+* text=auto
+*.html text eol=lf
+*.js text eol=lf
+*.css text eol=lf
