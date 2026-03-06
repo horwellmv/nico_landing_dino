@@ -573,30 +573,8 @@ function updateDisplay() {
 // Supabase-related Functions
 // ============================================================================
 
-// Placeholder: Fetch top 10 scores
-async function fetchTop10() {
-  // TODO: Implement Supabase fetch
-  // Placeholder data
-  return [
-    { nombre: 'María S.', grado: '6-a', puntaje: 2450, tiempo: 145 },
-    { nombre: 'Juan P.', grado: '7-b', puntaje: 1890, tiempo: 120 },
-    { nombre: 'Ana R.', grado: '8-a', puntaje: 1650, tiempo: 110 },
-    { nombre: 'Carlos M.', grado: '8-a', puntaje: 1420, tiempo: 95 },
-    { nombre: 'Sofia L.', grado: '9-a', puntaje: 1200, tiempo: 85 },
-    { nombre: 'Luis G.', grado: '6-b', puntaje: 1050, tiempo: 80 },
-    { nombre: 'Emma T.', grado: '7-a', puntaje: 950, tiempo: 70 },
-    { nombre: 'Diego F.', grado: '9-b', puntaje: 850, tiempo: 65 },
-    { nombre: 'Paula H.', grado: '8-b', puntaje: 750, tiempo: 60 },
-    { nombre: 'Mario K.', grado: '6-c', puntaje: 650, tiempo: 55 }
-  ];
-}
 
-// Check if score is top 10
-function checkIfTopScorer(puntaje) {
-  // For now, return true if score > 400
-  // TODO: Compare with actual top 10 from Supabase
-  return puntaje >= 400;
-}
+
 
 // Calculate rank position
 function calculateRank(puntaje, listaTop10) {
@@ -699,6 +677,17 @@ saveScoreBtn.addEventListener('click', async () => {
   }
 });
 
+// Ranking button - Test fetchTop10 and render
+const rankingBtn = document.getElementById('rankingBtn');
+if (rankingBtn) {
+  rankingBtn.addEventListener('click', async () => {
+    console.log('🔄 Actualizando Ranking...');
+    const topScores = await fetchTop10();
+    console.log('✅ Top 10 Scores:', topScores);
+    renderTopScores(topScores);
+  });
+}
+
 // Keyboard input
 document.addEventListener('keydown', (event) => {
   if (!gameState.running) return;
@@ -728,7 +717,8 @@ document.addEventListener('touchstart', (event) => {
 });
 
 // Load spritesheet if available
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
+  // Cargar spritesheet
   const img = new Image();
   img.src = spritesheetPath;
   img.onload = () => {
@@ -740,6 +730,11 @@ window.addEventListener('load', () => {
       'Spritesheet no encontrado, usando formas geométricas para el render'
     );
   };
+
+  // Cargar Top 10 al iniciar
+  console.log('📊 Cargando Top 10 del ranking...');
+  const topScores = await fetchTop10();
+  renderTopScores(topScores);
 });
 
 // ============================================================================
@@ -770,7 +765,7 @@ async function fetchTop10() {
     console.error('Error conectando a Supabase leaderboard:', error);
     return [];
   }
-  console.log
+  console.log('Top 10 fetched from Supabase:', data);
   return data;
 }
 
@@ -804,4 +799,58 @@ async function submitScore(nombre, grado, puntaje, tiempo) {
     alert('Hubo un error al guardar tu puntaje.');
     return false;
   }
+}
+
+// 5. Renderizar Top 10 en el HTML
+function renderTopScores(topScores) {
+  const rankingContainer = document.getElementById('ranking-container');
+  
+  if (!rankingContainer || !topScores || topScores.length === 0) {
+    console.warn('No hay datos para renderizar o contenedor no encontrado');
+    return;
+  }
+
+  // Limpiar contenedor
+  rankingContainer.innerHTML = '';
+
+  // Renderizar cada score
+  topScores.forEach((score, index) => {
+    const posicion = index + 1;
+    const isFirst = posicion === 1;
+    
+    // Determinar estilos según posición
+    const bgClass = isFirst 
+      ? 'bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700/50' 
+      : 'bg-gray-50 dark:bg-slate-700/50';
+    
+    const positionClass = isFirst 
+      ? 'font-black text-yellow-600 dark:text-yellow-500' 
+      : 'font-bold text-dark opacity-70';
+    
+    const scoreClass = isFirst 
+      ? 'font-black text-yellow-600' 
+      : 'font-bold text-dark opacity-75';
+
+    const scoreHtml = `
+      <div class="flex items-center p-3 ${bgClass} rounded-xl">
+        <div class="w-8 h-8 flex items-center justify-center ${positionClass}">
+          ${posicion}
+        </div>
+        <div class="w-10 h-10 rounded-full bg-gray-200 overflow-hidden mx-3">
+          <div class="w-full h-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold">
+            ${score.nombre.charAt(0).toUpperCase()}
+          </div>
+        </div>
+        <div class="flex-1">
+          <div class="font-bold text-sm">${score.nombre}</div>
+          <div class="text-xs text-dark opacity-60">${score.grado}</div>
+        </div>
+        <div class="${scoreClass}">${score.puntaje}</div>
+      </div>
+    `;
+
+    rankingContainer.insertAdjacentHTML('beforeend', scoreHtml);
+  });
+
+  console.log('✅ Top 10 renderizado correctamente');
 }
